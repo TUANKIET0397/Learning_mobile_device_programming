@@ -5,6 +5,6 @@ class UsersPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('User Page');
+    return const Text('User Page');
   }
 }
