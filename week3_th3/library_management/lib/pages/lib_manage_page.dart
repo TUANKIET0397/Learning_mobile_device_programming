@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:library_management/data/library_data.dart';
 import 'package:library_management/pages/books_manage_page.dart';
 import 'package:library_management/pages/home_page.dart';
 import 'package:library_management/pages/users_page.dart';
@@ -12,8 +13,19 @@ class LibManagePage extends StatefulWidget {
 
 class _LibManagePageState extends State<LibManagePage> {
   int _selectedIndex = 0;
+  final LibraryData _libraryData = LibraryData(); // ← THÊM DÒNG NÀY
 
-  final List<Widget> _pages = const [HomePage(), BookManagePage(), UsersPage()];
+  late final List<Widget> _pages;
+
+  @override
+  void initState() {
+    super.initState();
+    _pages = [
+      HomePage(libraryData: _libraryData), // ← TRUYỀN libraryData
+      const BookManagePage(),
+      const UsersPage(),
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +61,6 @@ class _LibManagePageState extends State<LibManagePage> {
     );
   }
 }
-
 // import 'package:flutter/material.dart';
 // import 'package:library_management/pages/books_manage_page.dart';
 // import 'package:library_management/pages/users_page.dart';

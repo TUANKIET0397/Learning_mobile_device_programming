@@ -1,6 +1,7 @@
-class Books {
-  int id;
-  String BookName;
+class Book {
+  final String id;
+  final String title;
+  final String author;
 
-  Books({required this.id, required this.BookName});
+  Book({required this.id, required this.title, required this.author});
 }

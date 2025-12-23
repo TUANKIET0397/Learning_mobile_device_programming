@@ -5,6 +5,6 @@ class BookManagePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('Book Page');
+    return Center(child: Text('Book Page'));
   }
 }
