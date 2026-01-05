@@ -20,6 +20,18 @@ Không nên dùng nullable khi:
 -   Có thể dùng giá trị mặc định thay vì null (ví dụ: "" thay vì String?).
 -   Làm code phức tạp không cần thiết.
 
+Lưu ý:
+
+```bash
+    không phải lúc nào id luôn luôn là unique,  nên là null nếu thông qua http, không chắc chắn nó có không thì nên khai báo optional -> crash(màn hình thông báo closeApp()).
+    - vd: data trả value về mobie thì không chắc nên cần ?
+```
+
+```bash
+
+
+```
+
 ### Cách thức xử lý phổ biến như: ?, ?., ?:, let, !! (các cách thức xử lý nullable of dart)
 
 1. Khai báo nullable type: ?
