@@ -166,7 +166,7 @@ class _OtpInputState extends State<OtpInput> {
               filled: true,
               fillColor: isFocused
                   ? Colors.white
-                  : Colors.grey.withOpacity(0.3),
+                  : const Color.fromARGB(135, 158, 158, 158),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
               ),

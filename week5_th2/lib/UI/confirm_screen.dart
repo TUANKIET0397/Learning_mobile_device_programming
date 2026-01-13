@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:week5_th2/models/reset_account_data.dart';
 
-/// ================= SCREEN 4 =================
 class ConfirmScreen extends StatelessWidget {
   final ResetAccountData data;
   const ConfirmScreen({super.key, required this.data});
@@ -100,7 +99,6 @@ class ConfirmScreen extends StatelessWidget {
   }
 }
 
-/// ================= REUSABLE INFO TILE =================
 class _InfoTile extends StatelessWidget {
   final IconData icon;
   final String value;

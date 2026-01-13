@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:week5_th2/UI/confirm_screen.dart';
 import 'package:week5_th2/models/reset_account_data.dart';
 
-/// ================= SCREEN 3 =================
 class PasswordScreen extends StatefulWidget {
   final ResetAccountData data;
 

@@ -50,3 +50,15 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 }
+
+// Timer(..., () async {
+//   final seen = await checkOnboardingSeen();
+
+//   if (!mounted) return;
+
+//   if (seen) {
+//     goToLogin();
+//   } else {
+//     goToOnboarding();
+//   }
+// });

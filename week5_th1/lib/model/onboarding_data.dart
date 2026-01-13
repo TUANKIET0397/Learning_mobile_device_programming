@@ -10,6 +10,7 @@ class OnboardingData {
   });
 }
 
+// Khởi tạo danh sách object
 final onboardingList = [
   OnboardingData(
     title: 'Easy Time Management',
@@ -30,3 +31,5 @@ final onboardingList = [
     image: 'assets/onboard3.png',
   ),
 ];
+
+// Đây là encapsulation (đóng gói dữ liệu)
