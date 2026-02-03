@@ -1,16 +1,69 @@
-# week7_end
+# UTH SmartTasks (Week 7)
 
-A new Flutter project.
+Ứng dụng quản lý công việc (todo) đơn giản, lưu trữ cục bộ bằng SQLite, giao diện Material 3.
 
-## Getting Started
+## Công nghệ sử dụng
 
-This project is a starting point for a Flutter application.
+- Flutter (Material 3 UI)
+- Dart SDK ^3.10.7
+- Provider (quản lý trạng thái với `ChangeNotifier`)
+- Sqflite (SQLite local database)
+- Path (xử lý đường dẫn DB)
 
-A few resources to get you started if this is your first Flutter project:
+## Kiến trúc & cấu trúc thư mục
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Dự án tổ chức theo hướng MVVM đơn giản:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- `lib/models`: model dữ liệu (`Task`)
+- `lib/data`: tầng lưu trữ (`TaskDatabase`, `TaskRepository`)
+- `lib/viewmodels`: logic điều khiển (`TaskViewModel`)
+- `lib/views`: màn hình UI (`TaskListView`, `AddTaskView`)
+- `lib/widgets`: widget tái sử dụng (`TaskCard`)
+
+## Chức năng chính
+
+- Hiển thị danh sách công việc đã lưu
+- Thêm công việc mới (tiêu đề + mô tả)
+- Xóa công việc bằng thao tác kéo (Dismissible)
+- Lưu dữ liệu bền vững bằng SQLite
+
+## hình ảnh minh họa
+
+![Màn hình danh sách](assets/image1.png)
+
+<hr>
+
+![Màn hình thêm mới](assets/image2.png)
+
+## Các bước đã thực hiện trong bài
+
+1. Khởi tạo dự án Flutter.
+2. Cài đặt các package cần thiết: `provider`, `sqflite`, `path`.
+3. Xây dựng model `Task` và mapping DB (`toMap`, `fromMap`).
+4. Tạo SQLite database với bảng `tasks` và các cột:
+    - `id` (INTEGER, PK, AUTOINCREMENT)
+    - `title` (TEXT)
+    - `description` (TEXT)
+    - `created_at` (INTEGER)
+5. Tạo `TaskRepository` để thao tác CRUD (get/add/delete).
+6. Xây dựng `TaskViewModel` với `ChangeNotifier` để quản lý trạng thái:
+    - Tải dữ liệu khi khởi tạo
+    - Thêm/xóa task và cập nhật UI
+7. Thiết kế UI:
+    - `TaskListView`: danh sách task, nút thêm, hiệu ứng xóa kéo
+    - `AddTaskView`: form nhập liệu, validate, nút lưu
+    - `TaskCard`: card hiển thị task với màu nền xen kẽ
+8. Tối ưu giao diện bằng Material 3 và theme tùy chỉnh.
+
+## Hướng dẫn chạy dự án
+
+1. Cài Flutter SDK và cấu hình thiết bị/giả lập.
+2. Cài dependencies:
+    - `flutter pub get`
+3. Chạy ứng dụng:
+    - `flutter run`
+
+## Ghi chú
+
+- Dữ liệu được lưu cục bộ trong SQLite, không cần mạng.
+- Danh sách task được sắp xếp theo thời gian tạo (mới nhất trước).
